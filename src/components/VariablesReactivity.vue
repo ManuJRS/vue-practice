@@ -1,4 +1,6 @@
 <script setup>
+// Crea una variable reactiva llamada message que diga "Hola Vue!" y muéstrala dentro de un <p>.
+// Luego, después de 2 segundos, cambia su valor a "Aprendiendo reactividad!".
 import { ref } from 'vue'; 
 
 ref

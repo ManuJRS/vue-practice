@@ -36,11 +36,15 @@ let removeTask = (i) =>{
 <button @click="addTask">Agregar Tarea</button>
 
 <!--Tuve que buscar como hacer la logica del btn para elminar la tarea-->
-<p v-bind:class="[task.done ? 'done p_task' : 'p_task']" v-for="(task, index) in tasks" :key="task.id">{{ index + 1 }}.- {{ task.text }} 
+<div class="container_tasks">
+<p v-bind:class="[task.done ? 'done p_task' : 'p_task']" v-for="(task, index) in tasks" :key="task.id">
+<span class="task_text">{{ index + 1 }}.- {{ task.text }}</span>
+<span class="task_acction">
 <button @click="removeTask(index)">Eliminar</button>
 <input type="checkbox" class="check" v-model="task.done">
+</span>
 </p>
-
+</div>
 </div>
 </template>
 
@@ -49,19 +53,38 @@ let removeTask = (i) =>{
 display: flex;
 flex-direction: column;
 align-items: center;
+width: auto;
 }
 button {
     margin: 20px;
 }
-.input_task {
-width: 500px;
-}
 .p_task {
-width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  border-bottom: 1px solid #eee;
+}
+.container_tasks {
+    width: 500px;
 }
 .done { 
     text-decoration: line-through;
     opacity: .7;
     color: red;
+}
+.task_text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+.task_text {
+    flex: 1;
+    text-align: left;
+}
+.input_task, .container_tasks  {
+    width: 720px;
+    max-width: 90%;
 }
 </style>

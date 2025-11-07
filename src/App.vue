@@ -6,10 +6,11 @@ import ImgHidden from './components/ImgHidden.vue';
 import InputModel from './components/InputModel.vue';
 import OperationCounter from './components/OperationCounter.vue';
 import SelectModel from './components/SelectModel.vue';
+import ToDo from './components/ToDo.vue';
 import VariablesReactivity from './components/VariablesReactivity.vue';
 
 </script>
 
 <template>
-<SelectModel/>
+<ToDo/>
 </template>

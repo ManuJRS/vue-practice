@@ -10,6 +10,7 @@ import { ref } from 'vue';
 let newTask = ref("");
 let tasks = ref([])
 let addTask = () => {
+    if (!newTask.value.trim()) return // esto tuve que buscar como hacerlo con CGPT no encontraba la forma de eliminar espacios para que no registre solo espacios vacios
     tasks.value.push(newTask.value)
     newTask.value = ""
 }
